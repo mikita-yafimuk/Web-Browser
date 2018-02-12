@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<BorderPane fx:id="browserBorderPane" minHeight="600.0" minWidth="1000.0" prefHeight="705.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.Controller">
+   <center>
+      <BorderPane prefHeight="1000.0" prefWidth="1203.0" BorderPane.alignment="CENTER">
+         <top>
+            <ToolBar prefHeight="11.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+              <items>
+                  <Button mnemonicParsing="false" onAction="#browserBackButtonAction">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Back" />
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#browserForwardButtonAction">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/forward.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Forward" />
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                <Button mnemonicParsing="false" onAction="#browserHomeButtonAction">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Open the start page" />
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#browserReloadingButtonAction">
+                     <graphic>
+                        <ImageView fx:id="reloadImageView" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/reload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Reload current page" />
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <HBox prefHeight="16.0" prefWidth="442.0">
+                     <children>
+                        <TextField fx:id="addressBar" onAction="#browserGoButtonAction" prefHeight="25.0" prefWidth="611.0" />
+                        <ProgressIndicator fx:id="progressIndicator" maxHeight="24.0" maxWidth="261.0" minHeight="16.0" minWidth="16.0" prefHeight="24.0" prefWidth="261.0" visible="false">
+                           <effect>
+                              <Shadow height="0.0" radius="0.0" width="0.0" />
+                           </effect>
+                        </ProgressIndicator>
+                     </children>
+                  </HBox>
+                  <Button fx:id="addStartPage" mnemonicParsing="false" onAction="#setStartPage" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/star.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Set opened page as start page" />
+                     </tooltip>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonAddBM" mnemonicParsing="false" onAction="#addBookmark">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Add selected page to bookmarks" />
+                     </tooltip>
+                  </Button>
+                  <ComboBox fx:id="searchBox" prefHeight="25.0" prefWidth="133.0" />
+                  <ComboBox fx:id="comboBoxHistory" prefHeight="25.0" prefWidth="201.0" promptText="History" />
+                  <ComboBox fx:id="comboBoxBC" prefWidth="150.0" promptText="Bookmarks">
+                     <tooltip>
+                        <Tooltip text="Press &quot;delete&quot; to delete selected bookmark" />
+                     </tooltip>
+                  </ComboBox>
+              </items>
+            </ToolBar>
+         </top>
+         <center>
+            <WebView fx:id="browserWebView" prefHeight="544.0" prefWidth="1073.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <HBox prefHeight="21.0" prefWidth="604.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="113.0" progress="0.0" style="-fx-background-color: #000000;" translateX="10.0" visible="false" />
+                  <Label fx:id="status" prefHeight="17.0" prefWidth="864.0" text="Status" translateX="20.0" visible="false" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>
