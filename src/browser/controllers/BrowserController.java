@@ -1,5 +1,7 @@
-package browser;
+package browser.controllers;
 
+import browser.utils.AutoCompleteTextField;
+import browser.utils.win32.NativeCalls;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
@@ -24,7 +26,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Controller implements Initializable {
+public class BrowserController implements Initializable {
 
     @FXML
     BorderPane browserBorderPane;
@@ -48,8 +50,9 @@ public class Controller implements Initializable {
     ComboBox<String> comboBoxBC;
 
     private SortedSet<String> WEBSITE_PROPOSALS = new TreeSet<>();
+    private NativeCalls nativeCalls = new NativeCalls();
 
-    public Controller() {
+    public BrowserController() {
         loadListSites();
     }
 
@@ -298,5 +301,40 @@ public class Controller implements Initializable {
             this.WEBSITE_PROPOSALS.add(scanner.nextLine());
         }
         scanner.close();
+    }
+
+    @FXML
+    private void showProcessInfo(ActionEvent actionEvent) {
+        nativeCalls.showProcessInfo();
+    }
+
+    @FXML
+    private void showSystemTime(ActionEvent actionEvent) {
+        nativeCalls.showLocalTime();
+    }
+
+    @FXML
+    private void showSystemInfo(ActionEvent actionEvent) {
+        nativeCalls.showSystemInfo();
+    }
+
+    @FXML
+    private void closeWindow(ActionEvent actionEvent) {
+        nativeCalls.closeWindow();
+    }
+
+    @FXML
+    private void minimizeWindow(ActionEvent actionEvent) {
+        nativeCalls.minimizeWindow();
+    }
+
+    @FXML
+    private void lockWorkstation(ActionEvent actionEvent) {
+        nativeCalls.lockWorkstation();
+    }
+
+    @FXML
+    private void makeScreenshot() {
+        nativeCalls.makeScreenshoot();
     }
 }

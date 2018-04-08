@@ -1,4 +1,4 @@
-package browser;
+package browser.utils;
 
 import javafx.beans.InvalidationListener;
 import javafx.geometry.Side;

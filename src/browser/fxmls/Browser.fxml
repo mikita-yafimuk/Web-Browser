@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.web.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.WebView?>
-<BorderPane fx:id="browserBorderPane" minHeight="600.0" minWidth="1000.0" prefHeight="705.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.Controller">
+
+<BorderPane fx:id="browserBorderPane" minHeight="600.0" minWidth="1245.0" prefHeight="705.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.controllers.BrowserController">
    <center>
       <BorderPane prefHeight="1000.0" prefWidth="1203.0" BorderPane.alignment="CENTER">
          <top>
@@ -16,7 +21,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/back.png" />
+                              <Image url="@../../resources/images/back.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -31,7 +36,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/forward.png" />
+                              <Image url="@../../resources/images/forward.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -46,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/home.png" />
+                              <Image url="@../../resources/images/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,7 +66,7 @@
                      <graphic>
                         <ImageView fx:id="reloadImageView" fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/reload.png" />
+                              <Image url="@../../resources/images/reload.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -86,7 +91,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/star.png" />
+                              <Image url="@../../resources/images/star.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -101,7 +106,7 @@
                      <graphic>
                         <ImageView fitHeight="17.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/plus.png" />
+                              <Image url="@../../resources/images/plus.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -116,6 +121,17 @@
                         <Tooltip text="Press &quot;delete&quot; to delete selected bookmark" />
                      </tooltip>
                   </ComboBox>
+                  <MenuButton mnemonicParsing="false" text="winapi">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#showSystemTime" text="Show system time" />
+                      <MenuItem mnemonicParsing="false" onAction="#showProcessInfo" text="Show process info" />
+                        <MenuItem mnemonicParsing="false" onAction="#showSystemInfo" text="Show system INFO" />
+                        <MenuItem mnemonicParsing="false" onAction="#minimizeWindow" text="Minimize window" />
+                        <MenuItem mnemonicParsing="false" onAction="#makeScreenshot" text="Make screenshot" />
+                        <MenuItem mnemonicParsing="false" onAction="#lockWorkstation" text="Lock workstation" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close window" />
+                    </items>
+                  </MenuButton>
               </items>
             </ToolBar>
          </top>

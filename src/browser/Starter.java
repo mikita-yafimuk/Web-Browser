@@ -14,14 +14,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Browser extends Application {
+public class Starter extends Application {
 
     private TabPane root;
-    private final static Logger logger = Logger.getLogger(Browser.class.getName());
+    private final static Logger logger = Logger.getLogger(Starter.class.getName());
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent browser = FXMLLoader.load(getClass().getResource("Browser.fxml"));
+        Parent browser = FXMLLoader.load(getClass().getResource("fxmls/Browser.fxml"));
         Tab browserTab = new Tab("New Tab", browser);
         Tab addTab = new Tab("+", null);
         addTab.setClosable(false);
@@ -44,7 +44,7 @@ public class Browser extends Application {
 
     private void addNewTab() {
         try {
-            Parent browser = FXMLLoader.load(getClass().getResource("Browser.fxml"));
+            Parent browser = FXMLLoader.load(getClass().getResource("fxmls/Browser.fxml"));
             Tab browserTab = new Tab("New Tab", browser);
             root.getTabs().add(root.getTabs().size() - 1, browserTab);
             root.getSelectionModel().select(browserTab);
