@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.WebView?>
 
-<BorderPane fx:id="browserBorderPane" minHeight="600.0" minWidth="1245.0" prefHeight="705.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.controllers.BrowserController">
+<BorderPane fx:id="browserBorderPane" minHeight="600.0" minWidth="1245.0" prefHeight="705.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="browser.controller.BrowserController">
    <center>
       <BorderPane prefHeight="1000.0" prefWidth="1203.0" BorderPane.alignment="CENTER">
          <top>

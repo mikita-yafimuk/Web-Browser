@@ -1,4 +1,4 @@
-package browser.utils.win32;
+package browser.util.win32;
 
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;

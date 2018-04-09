@@ -1,4 +1,4 @@
-package browser.utils.win32;
+package browser.util.win32;
 
 import com.sun.jna.platform.win32.*;
 import com.sun.jna.platform.win32.WinBase.SYSTEMTIME;

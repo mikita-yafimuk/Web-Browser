@@ -21,7 +21,7 @@ public class Starter extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent browser = FXMLLoader.load(getClass().getResource("fxmls/Browser.fxml"));
+        Parent browser = FXMLLoader.load(getClass().getResource("fxml/Browser.fxml"));
         Tab browserTab = new Tab("New Tab", browser);
         Tab addTab = new Tab("+", null);
         addTab.setClosable(false);
@@ -44,7 +44,7 @@ public class Starter extends Application {
 
     private void addNewTab() {
         try {
-            Parent browser = FXMLLoader.load(getClass().getResource("fxmls/Browser.fxml"));
+            Parent browser = FXMLLoader.load(getClass().getResource("fxml/Browser.fxml"));
             Tab browserTab = new Tab("New Tab", browser);
             root.getTabs().add(root.getTabs().size() - 1, browserTab);
             root.getSelectionModel().select(browserTab);

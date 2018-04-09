@@ -1,7 +1,7 @@
-package browser.controllers;
+package browser.controller;
 
-import browser.utils.AutoCompleteTextField;
-import browser.utils.win32.NativeCalls;
+import browser.util.AutoCompleteTextField;
+import browser.util.win32.NativeCalls;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
